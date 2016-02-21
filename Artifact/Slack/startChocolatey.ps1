@@ -11,6 +11,7 @@
     [string] $password
 )
 
+Start-Sleep -s 300
 $secPassword = ConvertTo-SecureString $password -AsPlainText -Force
 $credential = New-Object System.Management.Automation.PSCredential("$env:COMPUTERNAME\$($username)", $secPassword)
 
