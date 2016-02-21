@@ -8,8 +8,19 @@
   ],
   "iconUri": "https://chocolatey.org/content/packageimages/slack.1.0.0.png",
   "targetOsType": "Windows",
-  "runCommand": {
-    "commandToExecute": "powershell.exe -ExecutionPolicy bypass -File startChocolatey.ps1 -PackageList slack"
-
+   "parameters": {
+        "installUsername": {
+            "type": "string",
+            "displayName": "Install User Name",
+            "description": "User with admin rights to install Atom"
+        },
+        "installPassword": {
+            "type": "securestring",
+            "displayName": "Install Password",
+            "description": "Password for the install user"
+        }
+    },
+    "runCommand": {
+    "commandToExecute": "[concat('powershell.exe -ExecutionPolicy bypass -File startChocolatey.ps1 -PackageList slack -Username ',  parameters('installUsername'), ' -Password ', parameters('installPassword'))]"
   }
 }
