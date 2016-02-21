@@ -12,12 +12,12 @@
         "installUsername": {
             "type": "string",
             "displayName": "Install User Name",
-            "description": "User with admin rights to install Atom"
+            "description": "User with admin rights to install Slack"
         },
         "installPassword": {
             "type": "securestring",
             "displayName": "Install Password",
-            "description": "Password for the install user"
+            "description": "Password for the install"
         }
     },
     "runCommand": {
