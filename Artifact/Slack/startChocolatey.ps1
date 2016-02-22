@@ -11,13 +11,12 @@
     [string] $password
 )
 
-Start-Sleep -s 300
 $secPassword = ConvertTo-SecureString $password -AsPlainText -Force
 $credential = New-Object System.Management.Automation.PSCredential("$env:COMPUTERNAME\$($username)", $secPassword)
 
 $command = $PSScriptRoot + "\ChocolateyPackageInstaller.ps1"
 
-# Run Chocolatey as the artifactInstaller user
+# Run Chocolatey as the specifyed user
 Enable-PSRemoting –Force -SkipNetworkProfileCheck
 
 # Ensure that current process can run scripts. 
