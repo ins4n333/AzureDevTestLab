@@ -216,7 +216,7 @@ function InstallPackages
         WriteLog $("Installing package: " + $package)
 
         # install git via chocolatey
-        choco install $package -Version 1.2.7 -s https://www.myget.org/F/almrangers/api/v2/package --force --yes --acceptlicense --verbose | Out-Null 
+        choco install $package -Version 1.2.7 -s https://www.myget.org/F/almrangers/api/v2 --force --yes --acceptlicense --verbose | Out-Null 
 
         if ($? -eq $false)
         {
